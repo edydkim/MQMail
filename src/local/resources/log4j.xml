@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<!--
+   | For more configuration information and examples see the Jakarta Log4j
+   | owebsite: http://jakarta.apache.org/log4j
+ -->
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+
+    <!-- ================================= -->
+    <!-- appenders                         -->
+    <!-- ================================= -->
+
+    <appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">
+        <errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler"/>
+        <param name="File" value="/var/log/mail/server.log"/>
+        <param name="Append" value="true"/>
+        <param name="Threshold" value="INFO"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d %-5p ] %X{TARGET_VALUE}-%X{PRIMSCRIPT_ID} %c:%m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+        <errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler"/>
+        <param name="Target" value="System.out"/>
+        <param name="Threshold" value="DEBUG"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d %-5p ] %X{TARGET_VALUE}-%X{PRIMSCRIPT_ID} %c:%m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="FILE_ERROR" class="org.apache.log4j.DailyRollingFileAppender">
+        <errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler"/>
+        <param name="File" value="/var/log/mail/server_error.log"/>
+        <param name="Append" value="true"/>
+        <param name="Threshold" value="WARN"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p [%c] %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="FILE_DEBUG" class="org.apache.log4j.DailyRollingFileAppender">
+        <errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler"/>
+        <param name="File" value="/var/log/mail/server_debug.log"/>
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p [%c] %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- appender for syslog -->
+    <appender name="SYSLOG_APPENDER" class="org.apache.log4j.net.SyslogAppender">
+        <errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler"/>
+        <param name="Facility" value="${log.syslog.facility}"/>
+        <param name="SyslogHost" value="${log.syslog.host}"/>
+        <param name="FacilityPrinting" value="true"/>
+        <param name="Header" value="true"/>
+    </appender>
+
+    <!-- ================ -->
+    <!-- categories       -->
+    <!-- ================ -->
+
+    <!-- other production -->
+    <!--
+    <category name="org.springframework">
+        <priority value="WARN"/>
+    </category>
+    <category name="org.apache">
+        <priority value="INFO"/>
+    </category>
+
+    <category name="org.springframework">
+        <priority value="DEBUG"/>
+    </category>
+    <category name="org.dbunit">
+        <priority value="INFO"/>
+    </category>
+    -->
+    <category name="org.mail">
+        <priority value="DEBUG"/>
+    </category>
+
+    <!-- root category -->
+    <root>
+        <priority value="WARN"/>
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</log4j:configuration>
