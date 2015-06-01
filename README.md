@@ -6,6 +6,10 @@ see in detail below..
 ## SDK
 JDK 1.8
 
+## Framework
+Spring 4x
+Apache Thrift
+
 ## Extension
 JMX
 JMS
