@@ -63,3 +63,6 @@ END;
 ```
 
 In this case, you need to install DBMS with a driver, jdbc - Oracle xe.
+
+## ThreadSafe
+JmxMain
