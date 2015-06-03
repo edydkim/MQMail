@@ -8,12 +8,16 @@ JDK 1.8
 
 ## Framework
 Spring 4x
+
 Apache Thrift
 
 ## Extension
 JMX
+
 JMS
+
 Oracle AQ
+
 Thymeleaf
 
 ## Build
