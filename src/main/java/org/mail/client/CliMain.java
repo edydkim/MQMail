@@ -8,6 +8,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+/**
+ * Created by edydkim on 2015/06.
+ */
 @EnableScheduling
 public class CliMain {
     private static final Logger log = LoggerFactory.getLogger(CliMain.class);
