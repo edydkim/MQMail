@@ -11,7 +11,9 @@ import javax.management.ObjectName;
 import java.lang.management.ManagementFactory;
 import java.util.concurrent.CountDownLatch;
 
-
+/**
+ * Created by edydkim on 2015/06.
+ */
 @Component
 public class JmxMain {
     private static final Logger logger = LoggerFactory.getLogger(JmxMain.class);
