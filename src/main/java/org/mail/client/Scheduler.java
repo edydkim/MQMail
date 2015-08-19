@@ -8,7 +8,9 @@ import org.springframework.stereotype.Component;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-
+/**
+ * Created by edydkim on 2015/06.
+ */
 @Component
 public class Scheduler {
     private static final Logger log = LoggerFactory.getLogger(Scheduler.class);
