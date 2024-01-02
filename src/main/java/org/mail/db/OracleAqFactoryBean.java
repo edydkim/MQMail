@@ -26,6 +26,8 @@ public class OracleAqFactoryBean implements FactoryBean {
 
     @Override
     public Object getObject() throws Exception {
+        // NOTE: if you don't use to session Message Listener for oracle aq, delete me
+        // return AQjmsFactory.getQueueConnectionFactory(defaultDataSource);
         return new ActiveMQConnectionFactory(brokerUrl);
     }
 

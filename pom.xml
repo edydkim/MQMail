@@ -147,6 +147,17 @@
             <artifactId>activemq-client</artifactId>
             <version>5.15.14</version>
         </dependency>
-
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>maven.oracle.com</id>
+            <url>https://maven.oracle.com</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
 </project>
+
