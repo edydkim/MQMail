@@ -1,5 +1,7 @@
 package org.mail.jmx;
 
+import org.apache.commons.lang3.StringUtils;
+
 import javax.management.MBeanServerConnection;
 import javax.management.MBeanServerInvocationHandler;
 import javax.management.ObjectName;
@@ -39,7 +41,7 @@ public class Browser {
             if (args.length == 3) {
                 param = args[2];
             }
-            String ret = org.apache.commons.lang.StringUtils.EMPTY;
+            String ret = StringUtils.EMPTY;
 
             switch (method) {
                 case ST:
